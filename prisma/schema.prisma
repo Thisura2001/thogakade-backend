@@ -14,16 +14,16 @@ datasource db {
 }
 
 model customers {
-  id    Int    @id @default(autoincrement())
+  id    Int    @id @unique
   name  String
   nic   Int
-  email String @unique
+  email String
   phone String
 }
 
 model items {
-  id       Int    @id @default(autoincrement())
-  name     String @unique
+  id       Int    @id @unique
+  name     String
   price    String
   quantity String
 }
