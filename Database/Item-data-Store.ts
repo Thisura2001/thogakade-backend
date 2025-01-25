@@ -42,6 +42,8 @@ export async function updateItems(id:number,i:Item){
                 quantity:i.quantity
             }
         })
+        console.log("itemUpdated ",updatedItem)
+        return updatedItem;
     }catch (err){
         console.log("Error updating items ",err)
     }
