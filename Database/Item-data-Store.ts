@@ -19,7 +19,7 @@ export async function addItems(i:Item){
         console.log("Error adding Items ",err)
     }
 }
-export async function deleteItem(id:number){
+export async function deleteItem(id:string){
     try {
         const deleteItem = await prisma.items.delete({
             where:{
@@ -32,7 +32,7 @@ export async function deleteItem(id:number){
         console.log("Error deleting item ",err)
     }
 }
-export async function updateItems(id:number,i:Item){
+export async function updateItems(id:string,i:Item){
     try {
         const updatedItem = await prisma.items.update({
             where:{id:id},

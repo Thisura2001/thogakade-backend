@@ -20,7 +20,7 @@ export async function addCustomer(cus:Customer){
         console.log("Error adding customers ",err)
     }
 }
-export async function deleteCustomer(id:number){
+export async function deleteCustomer(id:string){
     try {
         const deletedCustomer = await prisma.customers.delete({
             where:{
@@ -33,7 +33,7 @@ export async function deleteCustomer(id:number){
         console.log("Error deleting customer ",err);
     }
 }
-export async function updateCustomer(id:number,cus:Customer){
+export async function updateCustomer(id:string,cus:Customer){
     try {
         const updatedCustomer = await prisma.customers.update({
             where:{id:id},

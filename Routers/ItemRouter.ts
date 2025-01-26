@@ -23,7 +23,7 @@ router.use('/add',async (req,res,next)=>{
     }
 })
 router.use('/update/:id',async (req,res,next)=>{
-    const id:number =parseInt(req.params.id)
+    const id:string =req.params.id
     const item:Item = req.body
     try{
         const updated = await updateItems(id,item);
@@ -33,7 +33,7 @@ router.use('/update/:id',async (req,res,next)=>{
     }
 })
 router.use('/delete/:id',async (req,res,next)=>{
-    const id:number =parseInt(req.params.id)
+    const id:string =req.params.id
     try{
         const deleted = await deleteItem(id);
         res.json(deleted)

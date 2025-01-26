@@ -22,7 +22,7 @@ router.use('/add',async (req, res, next) => {
     }
 })
 router.use('/delete/:id', async (req,res,next)=>{
-    const id:number = parseInt(req.params.id)
+    const id:string = req.params.id
     try {
         const deleted = await deleteCustomer(id)
         res.json(deleted)
@@ -31,7 +31,7 @@ router.use('/delete/:id', async (req,res,next)=>{
     }
 })
 router.use('/update/:id', async (req,res,next)=>{
-    const id:number = parseInt(req.params.id)
+    const id:string = req.params.id
     const customer:Customer = req.body
     try{
         const updated = await updateCustomer(id,customer);

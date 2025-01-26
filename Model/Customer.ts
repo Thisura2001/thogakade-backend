@@ -1,7 +1,7 @@
 export default class Customer{
-    id!:number;
+    id!:string;
     name!:string;
-    nic!:number;
+    nic!:string;
     email!:string;
     phone!:string;
 }
